@@ -1,5 +1,5 @@
 {
-    "name": "moip/assinaturas",
+    "name": "moipassinaturas",
     "type": "library",
     "require": {
         "php": ">=7.0",
