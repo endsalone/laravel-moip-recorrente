@@ -1,5 +1,5 @@
 {
-    "name": "endsalone/moip/recorrente",
+    "name": "endsalone/moiprecorrente",
     "type": "library",
     "require": {
         "php": ">=7.0",
