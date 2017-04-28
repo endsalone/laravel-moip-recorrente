@@ -1,9 +1,9 @@
 <?php
 
-namespace MoipAssinaturas\Http;
+namespace Moip\Recorrente\Http;
 
 
-use MoipAssinaturas\Interfaces\iRequest;
+use Moip\Recorrente\Interfaces\iRequest;
 
 class Request implements iRequest
 {

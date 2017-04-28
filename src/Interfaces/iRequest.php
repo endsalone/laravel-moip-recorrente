@@ -1,6 +1,6 @@
 <?php
 
-namespace MoipAssinaturas\Interfaces;
+namespace Moip\Recorrente\Interfaces;
 /**
  * Created by PhpStorm.
  * User: ernandesguedes

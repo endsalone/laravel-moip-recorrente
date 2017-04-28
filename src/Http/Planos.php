@@ -6,7 +6,7 @@
  * Time: 13:28
  */
 
-namespace MoipAssinaturas\Http;
+namespace Moip\Recorrente\Http;
 
 
 class Planos extends Request

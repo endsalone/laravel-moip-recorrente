@@ -1,12 +1,13 @@
 <?php
 
-namespace MoipAssinaturas\Plans;
+namespace Moip\Recorrente\Tests;
 
-use PHPUnit\Framework\TestCase;
 /**
  * CLASSES REQUERIDAS
  */
-use MoipAssinaturas\Http\Planos;
+
+use PHPUnit\Framework\TestCase;
+use Moip\Recorrente\Http\Planos;
 
 class PlanTest extends TestCase
 {

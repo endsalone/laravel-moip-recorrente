@@ -6,7 +6,7 @@
  * Time: 16:50
  */
 
-namespace MoipAssinaturas\Providers;
+namespace Moip\Recorrente\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -27,7 +27,7 @@ class MoipAssinaturasServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('mmollick/laravel-stripe');
+        $this->package('endsalone/moipassinaturas');
         /*
          * Load Stripe configuration
          *
@@ -36,22 +36,9 @@ class MoipAssinaturasServiceProvider extends ServiceProvider
          *
          * Read more: http://laravel.com/docs/configuration#environment-configuration
          */
-        $api_key = isset($_ENV['stripe.api_key']) ? $_ENV['stripe.api_key'] : $this->app['config']->get('laravel-stripe::stripe.api_key');
-        \Stripe\Stripe::setApiKey($api_key);
-        // Set API Version (optional)
-        $api_version = isset($_ENV['stripe.api_version']) ? $_ENV['stripe.api_version'] : $this->app['config']->get('laravel-stripe::stripe.api_version');
-        if($api_version !== null)
-            \Stripe\Stripe::setApiVersion($api_version);
-        $publishableKey = isset($_ENV['stripe.publishable_key']) ? $_ENV['stripe.publishable_key'] : $this->app['config']->get('laravel-stripe::stripe.publishable_key');
-        /*
-         * Register blade compiler for the Stripe publishable key.
-         */
-        $blade = $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
-        $blade->extend(function($value, $compiler) use($publishableKey)
-        {
-            $matcher = "/(?<!\w)(\s*)@stripeKey/";
-            return preg_replace($matcher, $publishableKey, $value);
-        });
+        $api_token = $this->app['config']->get('moipassinaturas::moipassinaturas.token');
+        $api_key = $this->app['config']->get('moipassinaturas::moipassinaturas.key');
+
     }
     /**
      * Register the service provider.

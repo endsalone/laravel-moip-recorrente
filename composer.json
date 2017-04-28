@@ -1,5 +1,5 @@
 {
-    "name": "endsalone/moipassinaturas",
+    "name": "endsalone/moip/recorrente",
     "type": "library",
     "require": {
         "php": ">=7.0",
@@ -18,7 +18,8 @@
     ],
     "autoload": {
         "psr-4": {
-          "MoipAssinaturas\\": "src"
+          "Moip\\Recorrente\\": "src",
+          "Moip\\Recorrente\\Tests\\": "tests"
         }
     }
 }
