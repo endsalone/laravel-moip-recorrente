@@ -9,5 +9,8 @@
 return [
     'token' => 'HREDFJPZ7843NCVOZK8QUPUXJK9FOHY4',
     'chave' => 'DGWBJYOBMMA8WQDRDFMJEJXKQFRW5CPGRRQ3KA27',
-    'sandbox' => true
+    'test' => true,
+
+    'sandbox' => 'https://sandbox.moip.com.br',
+    'production' => 'https://moip.com.br'
 ];

@@ -2,12 +2,6 @@
     "name": "endsalone/moiprecorrente",
     "type": "library",
     "require": {
-        "php": ">=7.0",
-        "illuminate/config": "~5.1 || ~5.2 || ~5.3 || ~5.4",
-        "illuminate/support": "~5.1 || ~5.2 || ~5.3 || ~5.4"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^6.0"
     },
     "license": "MIT",
     "authors": [
