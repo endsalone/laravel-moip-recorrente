@@ -12,6 +12,7 @@
         "phpunit/phpunit": "5.*"
     },
     "license": "MIT",
+
     "authors": [{
         "name": "Ernandes Guedes",
         "email": "jocker.soad@gmail.com"
