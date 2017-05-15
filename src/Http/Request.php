@@ -118,4 +118,35 @@ class Request extends Recorrente
 
         return $array;
     }
+
+    /**
+     * HTTP DELETE
+     * @param $url
+     * @return array
+     */
+    public function delete($url)
+    {
+        //INICIAR CURL
+        $curl = curl_init();
+        //URL OPTIONS
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $this->header());
+        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0");
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+        //EXECUTA CURL
+        $json = curl_exec($curl);
+        //STATUS CODE
+        $status = curl_getinfo($curl);
+
+        //FECHA O CURL
+        curl_close($curl);
+        $array = array();
+        $array['content'] = json_decode($json);
+        $array['status'] = $status['http_code'];
+
+        return $array;
+    }
 }

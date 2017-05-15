@@ -4,7 +4,7 @@ namespace Moip\Recorrente\Api;
 
 use Moip\Recorrente\Http\Request;
 
-class Invoice extends Request
+class Payment extends Request
 {
     public $env;
     public function __construct($url)
@@ -19,7 +19,7 @@ class Invoice extends Request
      */
     public function find($signature_code)
     {
-        return $this->get($this->env.'/assinaturas/v1/subscriptions/' . $signature_code . '/invoices');
+        return $this->get($this->env.'/assinaturas/v1/subscriptions/' . $signature_code . '/payments');
     }
 
     /**
@@ -29,7 +29,7 @@ class Invoice extends Request
      */
     public function findDetail($invoice_id)
     {
-        return $this->get($this->env.'/assinaturas/v1/invoices/' . $invoice_id);
+        return $this->get($this->env.'/assinaturas/v1/payments/' . $invoice_id);
     }
 
 }

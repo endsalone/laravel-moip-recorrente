@@ -28,12 +28,12 @@ class Plan extends Request
 
     /**
      * LISTAR TODOS OS PLANOS DO PARAMETRO
-     * @param null $id
+     * @param null $plan_id
      * @return array
      */
-    public function find($id)
+    public function find($plan_id)
     {
-        return $this->get($this->env . '/assinaturas/v1/plans/'. $id);
+        return $this->get($this->env . '/assinaturas/v1/plans/'. $plan_id);
     }
 
     /**
@@ -48,34 +48,32 @@ class Plan extends Request
 
     /**
      * EDITAR O PLANO
-     * @param $id
+     * @param $plan_id
      * @param $data
      * @return array
      */
-    public function edit($id, $data)
+    public function edit($plan_id, $data)
     {
-        return $this->put($this->env . '/assinaturas/v1/plans/' . $id, $data);
+        return $this->put($this->env . '/assinaturas/v1/plans/' . $plan_id, $data);
     }
 
     /**
      * DESATIVAR PLANO
-     *
-     * @param $id
+     * @param $plan_id
      * @return array
      */
-    public function inactive($id)
+    public function inactive($plan_id)
     {
-        return $this->put($this->env . '/assinaturas/v1/plans/' . $id . '/inactivate', $id);
+        return $this->put($this->env . '/assinaturas/v1/plans/' . $plan_id . '/inactivate', $id);
     }
 
     /**
      * ATIVAR PLANO
-     *
-     * @param $id
+     * @param $plan_id
      * @return array
      */
-    public function active($id)
+    public function active($plan_id)
     {
-        return $this->put($this->env . '/assinaturas/v1/plans/' . $id . '/activate', $id);
+        return $this->put($this->env . '/assinaturas/v1/plans/' . $plan_id . '/activate', $id);
     }
 }

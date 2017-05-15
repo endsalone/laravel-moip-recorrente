@@ -23,12 +23,12 @@ class Subscriber extends Request
 
     /**
      * LISTAR O CLIENTE DO PARAMETRO
-     * @param $id
+     * @param $user_id
      * @return array
      */
-    public function find($id)
+    public function find($user_id)
     {
-        return $this->get($this->env . '/assinaturas/v1/customers/'. $id);
+        return $this->get($this->env . '/assinaturas/v1/customers/'. $user_id);
     }
 
     /**
@@ -43,24 +43,24 @@ class Subscriber extends Request
 
     /**
      * EDITAR DADOS DO CLIENTE
-     * @param $id
+     * @param $user_id
      * @param $data
      * @return array
      */
-    public function edit($id, $data)
+    public function edit($user_id, $data)
     {
-        return $this->put($this->env.'/assinaturas/v1/customers/'. $id, $data);
+        return $this->put($this->env.'/assinaturas/v1/customers/'. $user_id, $data);
     }
 
     /**
      * EDITAR DADOS DO CARTAO DE CREDITO DO CLIENTE
-     * @param $id
+     * @param $user_id
      * @param $data
      * @return array
      */
-    public function editBillingInfo($id, $data)
+    public function editBillingInfo($user_id, $data)
     {
-        return $this->put($this->env . '/assinaturas/v1/customers/' . $id . '/billing_infos', $data);
+        return $this->put($this->env . '/assinaturas/v1/customers/' . $user_id . '/billing_infos', $data);
     }
 
 }

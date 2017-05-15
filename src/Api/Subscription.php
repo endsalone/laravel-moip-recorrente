@@ -4,7 +4,7 @@ namespace Moip\Recorrente\Api;
 
 use Moip\Recorrente\Http\Request;
 
-class Signature extends Request
+class Subscription extends Request
 {
     public $env;
 
@@ -24,12 +24,12 @@ class Signature extends Request
 
     /**
      * COLETA ASSINATURA
-     * @param $id
+     * @param $subscription_code
      * @return array
      */
-    public function find($id)
+    public function find($subscription_code)
     {
-        return $this->get($this->env.'/assinaturas/v1/subscriptions/' . $id);
+        return $this->get($this->env.'/assinaturas/v1/subscriptions/' . $subscription_code);
     }
 
     /**
@@ -41,7 +41,6 @@ class Signature extends Request
     {
         return $this->post($this->env . '/assinaturas/v1/subscriptions?new_customer=false', $data);
     }
-
 
     /**
      * CRIAR UMA NOVA ASSINATURA JUNTO COM O USUARIO
@@ -55,43 +54,43 @@ class Signature extends Request
 
     /**
      * SUSPENDE A ASSINATURA
-     * @param $id
+     * @param $subscription_code
      * @return array
      */
-    public function suspend($id)
+    public function suspend($subscription_code)
     {
-        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $id .'/suspend', $id);
+        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/suspend', $signature_code);
     }
 
     /**
      * REATIVA A ASSINATURA
-     * @param $id
+     * @param $subscription_code
      * @return array
      */
-    public function active($id)
+    public function active($subscription_code)
     {
-        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $id .'/activate', $id);
+        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/activate', $signature_code);
     }
 
     /**
      * CANCELA A ASSINATURA
-     * @param $id
+     * @param $subscription_code
      * @return array
      */
-    public function cancel($id)
+    public function cancel($subscription_code)
     {
-        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $id .'/cancel', $id);
+        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/cancel', $subscription_code);
     }
 
     /**
      * ALTERAR ASSINATURA
-     * @param $id
+     * @param $subscription_code
      * @param $data
      * @return array
      */
-    public function edit($id, $data)
+    public function edit($subscription_code, $data)
     {
-        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $id, $data);
+        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code, $data);
     }
 
 

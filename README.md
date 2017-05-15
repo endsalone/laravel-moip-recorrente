@@ -1,2 +1,2 @@
-# moipassinaturas
-Moip Assinaturas e Planos
+# Laravel Moip Recorrente
+Moip Planos, Assinaturas e Faturamento

@@ -2,9 +2,12 @@
 namespace Moip\Recorrente;
 
 use Illuminate\Support\Facades\Config;
+use Moip\Recorrente\Api\Coupon;
 use Moip\Recorrente\Api\Invoice;
+use Moip\Recorrente\Api\Payment;
 use Moip\Recorrente\Api\Plan;
-use Moip\Recorrente\Api\Signature;
+use Moip\Recorrente\Api\Retry;
+use Moip\Recorrente\Api\Subscription;
 use Moip\Recorrente\Api\Subscriber;
 
 
@@ -43,13 +46,12 @@ class Recorrente
         return new Subscriber($this->env);
     }
 
-
     /**
-     * @return Signature
+     * @return Subscription
      */
-    public function Signature()
+    public function Subscription()
     {
-        return new Signature($this->env);
+        return new Subscription($this->env);
     }
 
     /**
@@ -60,4 +62,27 @@ class Recorrente
         return new Invoice($this->env);
     }
 
+    /**
+     * @return Payment
+     */
+    public function Payment()
+    {
+        return new Payment($this->env);
+    }
+
+    /**
+     * @return Coupon
+     */
+    public function Coupon()
+    {
+        return new Coupon($this->env);
+    }
+
+    /**
+     * @return Retry
+     */
+    public function Retry()
+    {
+        return new Retry($this->env);
+    }
 }
