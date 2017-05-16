@@ -64,7 +64,7 @@ class Plan extends Request
      */
     public function inactive($plan_id)
     {
-        return $this->put($this->env . '/assinaturas/v1/plans/' . $plan_id . '/inactivate', $id);
+        return $this->put($this->env . '/assinaturas/v1/plans/' . $plan_id . '/inactivate', $plan_id);
     }
 
     /**
