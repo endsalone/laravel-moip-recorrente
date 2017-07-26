@@ -34,11 +34,12 @@ class Subscriber extends Request
     /**
      * CRIAR UM NOVO CLIENTE
      * @param $data
+     * @param bool $vault
      * @return array
      */
     public function create($data, $vault = false)
     {
-        return $this->post($this->env . '/assinaturas/v1/customers?new_vault=' . $vault, $data);
+        return $this->post($this->env . '/assinaturas/v1/customers?new_vault=' . var_export($vault, true), $data);
     }
 
     /**
