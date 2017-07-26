@@ -36,9 +36,9 @@ class Subscriber extends Request
      * @param $data
      * @return array
      */
-    public function create($data)
+    public function create($data, $vault = false)
     {
-        return $this->post($this->env . '/assinaturas/v1/customers?new_vault=false', $data);
+        return $this->post($this->env . '/assinaturas/v1/customers?new_vault=' . $vault, $data);
     }
 
     /**
