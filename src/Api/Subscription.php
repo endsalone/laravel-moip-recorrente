@@ -59,7 +59,7 @@ class Subscription extends Request
      */
     public function suspend($subscription_code)
     {
-        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/suspend', $signature_code);
+        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/suspend', $subscription_code);
     }
 
     /**
@@ -69,7 +69,7 @@ class Subscription extends Request
      */
     public function active($subscription_code)
     {
-        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/activate', $signature_code);
+        return $this->put($this->env . '/assinaturas/v1/subscriptions/'. $subscription_code .'/activate', $subscription_code);
     }
 
     /**
